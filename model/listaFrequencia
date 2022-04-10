@@ -1,0 +1,102 @@
+<?php
+function listaFrequencia($frequencias){
+ include '../model/config.php';
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $sql_1 = "SELECT h.cod_disc,d.nome_disc, f.`data`, f.cod_aluno, f.status_frequencia, a.nome
+                FROM frequencia f 
+                JOIN horario h
+                ON f.cod_horario = h.cod_horario
+                JOIN aluno a
+                ON f.cod_aluno = a.cod_aluno
+                JOIN disciplina d
+                ON h.cod_disc = d.cod_disc
+                WHERE cod_prof =" . $_SESSION['cod_prof'] . "
+                AND h.id_turma =" . $_POST['turma'] . "
+                AND h.cod_disc=" . $_GET['disciplina'] . "
+                AND bim =" . $_POST['bimestre'] . "
+                ORDER BY f.`data` asc";
+
+        $frequencias = mysqli_query($conexao, $sql_1);
+        $datasTh = array();
+        
+
+        
+        while ($row = mysqli_fetch_assoc($frequencias)) {
+            
+            $mes = substr($row['data'], 5, 2);
+            $dia = substr($row['data'], 8, 2);
+            if (!isset($datasTh[$mes]))
+                $datasTh[$mes] = array();
+
+            if (!in_array($dia, $datasTh[$mes]))
+                $datasTh[$mes][] = $dia;
+        }
+        
+        foreach ($datasTh[$mes] as $idx => $value) {
+            echo $value.'<br>';
+            echo $idx;
+        }
+    }
+       
+}                       
+    
+
+
+/*
+function validarCadastro($dados) {
+    //if(!isset($dados['turma']) || (!$turma = trim($dados['turma'])))
+
+    if (!isset($dados['nome']) || (!$nome = trim($dados['nome']))) {
+        header('Location: index.php?erro=nome');
+        exit;
+    }
+
+    if (isset($dados['email']) && trim($dados['email'])) {
+        $email = trim($dados['email']);
+        // CONSTANTE EM LETRA MAIÚSCULA E NÃO TEM DÓLAR NA FRENTE
+        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        if (!$email) {
+            header('Location: index.php?erro=emailinvalido');
+            exit;
+        }
+    } else {
+        header('Location: index.php?erro=email');
+        exit;
+    }
+
+    if (!isset($dados['senha']) || (!$senha = trim($dados['senha']))) {
+        header('Location: index.php?erro=senha');
+        exit;
+    } else {
+        if (strlen($senha) < 6) {
+            header('Location: index.php?erro=senhainvalida');
+            exit;
+        }
+    }
+
+    if (isset($dados['cpf']) && ($cpf = trim($dados['cpf']))) {
+        if (strlen($cpf) != 11) {
+            header('Location: index.php?erro=cpfinvalido');
+            exit;
+        }
+    } else {
+        header('Location: index.php?erro=cpf');
+        exit;
+    }
+
+    if (!isset($dados['nascimento']) || (!$nascimento = trim($dados['nascimento']))) {
+        header('Location: index.php?erro=nascimento');
+        exit;
+    }
+
+    if (!isset($dados['estadocivil']) || (!$estadocivil = trim($dados['estadocivil']))) {
+        header('Location: index.php?erro=estadocivil');
+        exit;
+    }
+
+    if (!isset($dados['endereco']) || (!$endereco = trim($dados['endereco']))) {
+        header('Location: index.php?erro=endereco');
+        exit;
+    }
+}
+*/

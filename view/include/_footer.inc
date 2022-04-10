@@ -1,0 +1,1 @@
+<p class="text-black-50 text-center mt-5"><small>Todos os direitos reservados</small></p>

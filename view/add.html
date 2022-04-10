@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Template</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Web Dev Academy</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Inicio</a></li> 
+                        <li><a href="#">Opções</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Ajuda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="main" class="container-fluid">
+            <h3 class="page-header"> Adicionar Item</h3>
+            <form action="index.html">
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="matricula">Matricula:</label>
+                        <input type="text" class="form-control" id="matricula" placeholder="Matricula">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="rg">Registro Geral:</label>
+                        <input type="number" class="form-control" id="rg" placeholder="RG">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="uf">Orgão Emissor:</label>
+                        <input type="text" class="form-control" id="emissor" placeholder="Orgão Emissor">
+                    </div>
+                </div>
+                <!-- LINHA DOIS -->
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="cpf">CPF:</label>
+                        <input type="number" class="form-control" id="cpf" placeholder="CPF">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="telefone">Telefone:</label>
+                        <input type="number" class="form-control" id="telefone" placeholder="Tel">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="cep">CEP:</label>
+                        <input type="number" class="form-control" id="cep" placeholder="CEP">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" class="form-control" id="endereco" placeholder="Endereço">
+                    </div>
+                </div>
+                    <!-- LINHA DOIS -->
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="numero">Numero:</label>
+                            <input type="text" class="form-control" id="numero" placeholder="Numero">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" class="form-control" id="complemento" placeholder="Complemento">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="bairro">Bairro:</label>
+                            <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="uf">UF:</label>
+                            <input type="text" class="form-control" id="uf" placeholder="UF">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="nascimento">Data de nascimento:</label>
+                            <input type="date" class="form-control" id="nascimento">
+                        </div>
+                    </div>
+                    <!-- LINHA TRÊS -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="mae">Mãe:</label>
+                            <input type="text" class="form-control" id="mae" placeholder="Nome da mãe">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="rgMae">Rg da Mãe</label>
+                            <input type="number" class="form-control" id="rgMae" placeholder="RG da mãe">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="nascimentoMae">Data de Nascimento:</label>
+                            <input type="date" class="form-control" id="nascimentoMae">
+                        </div>
+                    </div>
+                    <!-- LINHA QUATRO -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="pai">Pai:</label>
+                            <input type="text" class="form-control" id="pai" placeholder="Nome da pai">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="rgPai">Rg da pai</label>
+                            <input type="number" class="form-control" id="rgPai" placeholder="RG da pai">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="nascimentoPai">Data de Nascimento:</label>
+                            <input type="date" class="form-control" id="nascimentoPai">
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="actions" class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                            <a href="index.html" class="btn btn-default">Cancelar</a>
+                        </div>
+                    </div>
+            </form>
+
+        </div>
+
+
+        <footer class="text-center">Todos os direitos reservados</footer>
+        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>
